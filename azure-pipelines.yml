@@ -33,6 +33,7 @@ stages:
     displayName: Front + Back + Coverage + Sonar
     steps:
     - checkout: self
+      fetchDepth: 0
 
     # ---------- Node + Python toolchains ----------
     - task: NodeTool@0
@@ -48,8 +49,8 @@ stages:
     - task: SonarCloudPrepare@2
       displayName: 'Prepare SonarCloud analysis'
       inputs:
-        SonarCloud: 'SONARCLOUD_SERVICE_CONNECTION_NAME'
-        organization: 'SONARCLOUD_ORGANIZATION_KEY'
+        SonarCloud: 'SonarCloud'
+        organization: 'chinogandara'
         scannerMode: 'Other'
         configMode: 'file'
         configFile: 'sonar-project.properties'
