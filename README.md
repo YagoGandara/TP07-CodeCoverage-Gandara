@@ -215,3 +215,5 @@ El archivo `azure-pipelines.yml` se actualizó par aque:
 1) El Job de frontend ejecute los test de Angular (solo si pasan se publica el artefacto)
 2) El Job de backend ejecute los test de FastAPI con pytest y genere un XML JUnit. Lis resultados se publican en Azure DevOps con `PublishTestResults@2` y si algun test falla, el job tambien
 3) Los stages de despliegue tienen el `dependsOn: Build` y `condition: succeded()` por lo que no se despliega nada si los test unitarios no pasan
+
+primera prueba de SonarCloud
