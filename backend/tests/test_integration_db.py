@@ -44,13 +44,12 @@ def setup_db():
 @pytest.mark.integration
 def test_list_todos_integration_uses_real_db(setup_db):
     """
-    Llama a /todos y verifica que responda 200.
+    Llama a /api/todos y verifica que responda 200.
     Esto atraviesa FastAPI + capa de acceso a datos + SQLite real.
-    No asumimos un shape específico del JSON para no atarnos al contrato.
     """
     client = TestClient(app)
 
-    resp_list = client.get("/todos")
+    resp_list = client.get("/api/todos")
     assert resp_list.status_code == 200
 
 
